@@ -1,10 +1,133 @@
 // Mobile Menu Toggle
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.querySelector('.nav-links');
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
 
-hamburger.addEventListener('click', () => {
-  navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    });
+
+    // Handle emergency type selection
+    const typeCards = document.querySelectorAll('.type-card');
+    typeCards.forEach(card => {
+        card.addEventListener('click', function() {
+            typeCards.forEach(c => c.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+    });
+
+    // Handle file upload preview
+    const fileInput = document.getElementById('media-files');
+    if (fileInput) {
+        fileInput.addEventListener('change', function() {
+            const label = this.previousElementSibling;
+            const fileCount = this.files.length;
+            if (fileCount > 0) {
+                label.querySelector('span').textContent = `${fileCount} file(s) selected`;
+            } else {
+                label.querySelector('span').textContent = 'Upload Photos/Videos';
+            }
+        });
+    }
+
+    // Handle location button
+    const locationBtn = document.querySelector('.location-btn');
+    if (locationBtn) {
+        locationBtn.addEventListener('click', function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        const lat = position.coords.latitude;
+                        const lng = position.coords.longitude;
+                        document.getElementById('manual-address').value = `Lat: ${lat}, Lng: ${lng}`;
+                    },
+                    error => {
+                        console.error('Error getting location:', error);
+                        alert('Unable to get your location. Please enter it manually.');
+                    }
+                );
+            } else {
+                alert('Geolocation is not supported by your browser. Please enter location manually.');
+            }
+        });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Close mobile menu if open
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+    });
+
+    // Handle form submission
+    const emergencyForm = document.querySelector('.emergency-report-form');
+    if (emergencyForm) {
+        emergencyForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Emergency report submitted successfully!');
+        });
+    }
+
+    // Handle newsletter form submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('input[type="email"]');
+            if (emailInput.value) {
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = '';
+            }
+        });
+    }
+
+    // Responsive image loading
+    function handleResponsiveImages() {
+        const images = document.querySelectorAll('img[data-src]');
+        images.forEach(img => {
+            if (window.innerWidth <= 768) {
+                img.src = img.getAttribute('data-src-mobile') || img.getAttribute('data-src');
+            } else {
+                img.src = img.getAttribute('data-src');
+            }
+        });
+    }
+
+    window.addEventListener('resize', handleResponsiveImages);
+    handleResponsiveImages();
 });
+
+// Add touch device detection
+function isTouchDevice() {
+    return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0));
+}
+
+// Add touch-specific classes if needed
+if (isTouchDevice()) {
+    document.body.classList.add('touch-device');
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   // Statistics Counter Animation
@@ -153,20 +276,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
 
   // Demo video button handling
   const demoBtn = document.querySelector('.demo-btn');

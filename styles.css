@@ -1950,3 +1950,376 @@
     }
   }
   
+  /* Mobile Responsive Enhancements */
+
+  /* Base Mobile-First Styles */
+  :root {
+    --header-height: 70px;
+    --container-padding: 20px;
+  }
+
+  /* General Container Width */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+  }
+
+  /* Enhanced Header Responsiveness */
+  @media (max-width: 1024px) {
+    header {
+      padding: 15px;
+    }
+
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      width: 100%;
+      background-color: #fe0000;
+      padding: 20px;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .social-icons {
+      display: none;
+    }
+
+    .auth-buttons {
+      margin-left: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    header .logo h1 {
+      font-size: 1.5rem;
+    }
+
+    .auth-buttons .signup-btn {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Enhanced Hero Section Responsiveness */
+  @media (max-width: 1024px) {
+    .hero {
+      padding: 120px var(--container-padding) 60px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 100px var(--container-padding) 50px;
+      min-height: auto;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+
+    .emergency-stats {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .stat-item {
+      width: calc(50% - 20px);
+      margin-bottom: 20px;
+    }
+  }
+
+  /* Enhanced Grid Layouts */
+  @media (max-width: 1024px) {
+    .features-grid,
+    .emergency-grid,
+    .tips-grid,
+    .faq-preview-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .features-grid,
+    .emergency-grid,
+    .tips-grid,
+    .faq-preview-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  }
+
+  /* Enhanced Form Responsiveness */
+  @media (max-width: 1024px) {
+    .form-container,
+    .report-container {
+      max-width: 100%;
+      margin: 0 15px;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .form-container,
+    .report-container {
+      padding: 20px;
+    }
+
+    .media-upload label {
+      padding: 20px;
+    }
+
+    .submit-emergency-btn,
+    .submit-btn {
+      width: 100%;
+    }
+  }
+
+  /* Enhanced Emergency Type Selector */
+  @media (max-width: 1024px) {
+    .emergency-type-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .emergency-type-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .type-card {
+      padding: 15px;
+    }
+  }
+
+  /* Enhanced Footer Responsiveness */
+  @media (max-width: 1024px) {
+    .footer-content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .footer-bottom .footer-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .footer-section {
+      text-align: center;
+    }
+
+    .footer-social,
+    .footer-bottom-links {
+      justify-content: center;
+    }
+
+    .contact-item {
+      justify-content: center;
+    }
+
+    .newsletter-form .form-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  /* Enhanced Timeline Responsiveness */
+  @media (max-width: 1024px) {
+    .timeline-content {
+      margin-left: 20px;
+    }
+
+    .timeline-features {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .process-timeline::before {
+      left: 20px;
+    }
+
+    .timeline-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+    }
+
+    .timeline-content {
+      padding: 15px;
+    }
+  }
+
+  /* Enhanced App Download Section */
+  @media (max-width: 1024px) {
+    .app-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+    }
+
+    .app-buttons {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .app-buttons {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .app-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* Small Device Optimizations */
+  @media (max-width: 480px) {
+    :root {
+      --container-padding: 15px;
+    }
+
+    .section-header h3 {
+      font-size: 1.8rem;
+    }
+
+    .section-header p {
+      font-size: 0.9rem;
+    }
+
+    .feature,
+    .emergency-card,
+    .tip-card {
+      padding: 15px;
+    }
+
+    .feature-icon,
+    .card-icon {
+      width: 60px;
+      height: 60px;
+    }
+
+    .feature-icon i,
+    .card-icon i {
+      font-size: 1.5rem;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+    }
+
+    .testimonial {
+      padding: 20px;
+    }
+
+    .testimonial-author img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  /* Touch Device Optimizations */
+  @media (hover: none) {
+    .cta-btn:hover,
+    .feature:hover,
+    .emergency-card:hover,
+    .tip-card:hover,
+    .social-link:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .type-card:hover {
+      transform: none;
+    }
+
+    .submit-btn:hover,
+    .submit-emergency-btn:hover {
+      transform: none;
+    }
+  }
+
+  /* Landscape Mode Optimizations */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+      min-height: auto;
+      padding: 100px var(--container-padding) 50px;
+    }
+
+    .emergency-type-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .form-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* High-DPI Screen Optimizations */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero::before {
+      background: linear-gradient(45deg, rgba(254, 0, 0, 0.85), rgba(204, 0, 0, 0.85));
+    }
+  }
+
+  /* Print Media Optimizations */
+  @media print {
+    .hero,
+    .footer-top {
+      background: none;
+      color: #000;
+    }
+
+    .hero::before {
+      display: none;
+    }
+
+    .nav-links,
+    .social-icons,
+    .auth-buttons,
+    .hamburger {
+      display: none;
+    }
+  }
+  
