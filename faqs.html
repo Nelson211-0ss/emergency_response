@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs - Emergency Services Platform</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <h1>UPF-emSERVICE</h1>
+      </div>
+      <nav class="navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+          <li><a href="contact.html">Contact Support</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="auth-buttons">
+        <button class="signup-btn">Sign Up</button>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="faq-main">
+    <section class="faq-hero">
+      <h2>Frequently Asked Questions</h2>
+      <p>Find answers to common questions about our emergency response platform</p>
+    </section>
+
+    <section class="faq-container">
+      <div class="faq-categories">
+        <button class="category-btn active" data-category="general">General</button>
+        <button class="category-btn" data-category="reporting">Reporting</button>
+        <button class="category-btn" data-category="technical">Technical</button>
+        <button class="category-btn" data-category="privacy">Privacy & Security</button>
+      </div>
+
+      <div class="faq-list">
+        <!-- General FAQs -->
+        <div class="faq-category" id="general">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What is UPF-emSERVICE?</h3>
+              <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>UPF-emSERVICE is a real-time emergency reporting platform that connects citizens directly with law enforcement and emergency responders. It allows for quick reporting of incidents with multimedia evidence and location tracking capabilities.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How quickly will I receive a response?</h3>
+              <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>Emergency reports are processed immediately and dispatched to the nearest available responders. Response times vary based on the severity of the emergency and available resources, but our system ensures the fastest possible coordination.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reporting FAQs -->
+        <div class="faq-category" id="reporting" style="display: none;">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What types of emergencies can I report?</h3>
+              <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>You can report various types of emergencies including medical emergencies, crimes in progress, fire incidents, traffic accidents, and suspicious activities. Our platform is designed to handle all types of emergency situations.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can I attach photos or videos to my report?</h3>
+              <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, our platform supports multimedia attachments including photos, videos, and audio recordings. These can be crucial pieces of evidence that help emergency responders better understand and respond to the situation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical FAQs -->
+        <div class="faq-category" id="technical" style="display: none;">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What devices are compatible with the service?</h3>
+              <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>Our service is compatible with all modern smartphones, tablets, and computers. We support the latest versions of iOS and Android for mobile devices, and all major web browsers for desktop access.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do I need to enable location services?</h3>
+              <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>While not mandatory, enabling location services is highly recommended as it helps emergency responders locate you quickly and accurately. You can enable or disable this feature at any time through your device settings.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Privacy FAQs -->
+        <div class="faq-category" id="privacy" style="display: none;">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How is my personal information protected?</h3>
+              <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>We use industry-standard encryption and security measures to protect your personal information. All data is stored securely and only accessed by authorized emergency response personnel when necessary.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Who has access to my emergency reports?</h3>
+              <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-answer">
+              <p>Your emergency reports are only accessible to authorized emergency response personnel and law enforcement officials directly involved in handling your case. All access is logged and monitored for security purposes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="modern-footer">
+    <div class="footer-top">
+      <div class="footer-content">
+        <div class="footer-section brand-section">
+          <h4 class="footer-logo">UPF-emSERVICE</h4>
+          <p class="brand-description">We provide a seamless way to report emergencies in real time to help law enforcement respond faster and more efficiently.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section links-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section contact-section">
+          <h4>Contact Info</h4>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>123 Main Street, Cityville</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>support@emergencyservices.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+1 234 567 890</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-section newsletter-section">
+          <h4>Stay Updated</h4>
+          <p>Subscribe to our newsletter for updates and safety tips.</p>
+          <form class="newsletter-form">
+            <div class="form-group">
+              <input type="email" placeholder="Enter your email" class="newsletter-input">
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-content">
+        <p class="copyright">&copy; 2024 UPF-emSERVICE. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -26,6 +26,7 @@
         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
         <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
       </div>
       <div class="auth-buttons">
         <button class="signup-btn">Sign Up</button>
@@ -38,72 +39,272 @@
     </div>
   </header>
 
-  <!-- Main Section -->
+  <!-- Main Content -->
   <main>
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/bb.jpg');">
       <div class="hero-content">
-        <h2>Report Emergencies Quickly and Securely</h2>
-        <p>Helping law enforcement respond faster with real-time updates and multimedia evidence.</p>
-        <a href="report-emergency.html" class="cta-btn">Report an Emergency</a>
+        <h2>Emergency Response Made Simple</h2>
+        <p>Quick and secure emergency reporting with real-time updates and location tracking</p>
+        <div class="hero-buttons">
+          <a href="report-emergency.html" class="cta-btn primary">Report Emergency</a>
+          <a href="how-it-works.html" class="cta-btn secondary">Learn More</a>
+        </div>
+        <div class="emergency-stats">
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Support</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2min</span>
+            <span class="stat-label">Avg. Response</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Secure</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Features Section -->
     <section class="features">
-      <h3>Key Features</h3>
+      <div class="section-header">
+        <h3>Key Features</h3>
+        <p>Our platform provides essential tools for emergency response</p>
+      </div>
       <div class="features-grid">
         <div class="feature">
-          <img src="images/police.jpg" alt="Real-time Reporting">
-          <h4>Real-time Reporting</h4>
-          <p>Instant updates sent directly to responders.</p>
-        </div>
-
-        <div class="feature">
-          <img src="images/multimedia-evidence.png" alt="Multimedia Evidence">
-          <h4>Multimedia Evidence</h4>
-          <p>Attach photos, videos, and voice recordings to reports.</p>
-        </div>
-
-        <div class="feature">
-          <img src="images/locationtrack.avif" alt="Location Tracking">
-          <h4>Location Tracking</h4>
-          <p>Automatic GPS location sharing for quick response.</p>
-        </div>
-
-        <div class="feature">
-            <img src="images/location-tracking.png" alt="Location Tracking">
-            <h4>Location Tracking</h4>
-            <p>Automatic GPS location sharing for quick response.</p>
+          <div class="feature-icon">
+            <i class="fas fa-location-dot"></i>
           </div>
+          <h4>Real-time Location</h4>
+          <p>Precise GPS tracking for accurate emergency response</p>
+        </div>
 
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-camera"></i>
+          </div>
+          <h4>Media Evidence</h4>
+          <p>Upload photos and videos to support your emergency report</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-bell"></i>
+          </div>
+          <h4>Instant Alerts</h4>
+          <p>Real-time notifications about emergency response status</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h4>Secure Platform</h4>
+          <p>End-to-end encryption for your safety and privacy</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Preview -->
+    <section class="how-it-works-preview">
+      <div class="section-header">
+        <h3>Simple 3-Step Process</h3>
+        <p>Getting help is quick and easy with our streamlined process</p>
+      </div>
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Report Incident</h4>
+            <p>Quickly submit details about the emergency situation</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Share Location</h4>
+            <p>Automatically send your precise location to responders</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Get Help</h4>
+            <p>Emergency services are dispatched to your location</p>
+          </div>
+        </div>
+      </div>
+      <div class="section-cta">
+        <a href="how-it-works.html" class="learn-more-btn">Learn More About the Process</a>
+      </div>
+    </section>
+
+    <!-- Emergency Types -->
+    <section class="emergency-types">
+      <div class="section-header">
+        <h3>Types of Emergencies We Handle</h3>
+        <p>Our platform is equipped to handle various emergency situations</p>
+      </div>
+      <div class="emergency-grid">
+        <div class="emergency-card">
+          <i class="fas fa-ambulance"></i>
+          <h4>Medical</h4>
+          <ul>
+            <li>Heart Attacks</li>
+            <li>Injuries</li>
+            <li>Accidents</li>
+          </ul>
+        </div>
+        <div class="emergency-card">
+          <i class="fas fa-fire"></i>
+          <h4>Fire</h4>
+          <ul>
+            <li>Building Fires</li>
+            <li>Forest Fires</li>
+            <li>Explosions</li>
+          </ul>
+        </div>
+        <div class="emergency-card">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Police</h4>
+          <ul>
+            <li>Crimes</li>
+            <li>Accidents</li>
+            <li>Suspicious Activity</li>
+          </ul>
+        </div>
+        <div class="emergency-card">
+          <i class="fas fa-house-damage"></i>
+          <h4>Natural Disasters</h4>
+          <ul>
+            <li>Floods</li>
+            <li>Earthquakes</li>
+            <li>Storms</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download App Section -->
+    <section class="app-download">
+      <div class="app-content">
+        <div class="app-text">
+          <h3>Get Our Mobile App</h3>
+          <p>Download our mobile app for faster emergency reporting and real-time updates</p>
+          <div class="app-buttons">
+            <a href="#" class="app-btn">
+              <i class="fab fa-google-play"></i>
+              <span>
+                <small>Get it on</small>
+                <strong>Google Play</strong>
+              </span>
+            </a>
+            <a href="#" class="app-btn">
+              <i class="fab fa-apple"></i>
+              <span>
+                <small>Download on</small>
+                <strong>App Store</strong>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="app-image">
+          <img src="images/app-preview.png" alt="Mobile App Preview">
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="section-header">
+        <h3>What People Say</h3>
+        <p>Real stories from people who used our emergency response platform</p>
+      </div>
+      <div class="testimonials-slider">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"The quick response time saved my father's life during a heart attack. Thank you!"</p>
+            <div class="testimonial-author">
+              <img src="images/testimonial1.jpg" alt="Sarah Johnson">
+              <div class="author-info">
+                <h4>Sarah Johnson</h4>
+                <span>New York, USA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Add more testimonials as needed -->
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>About Emergency Services</h4>
-        <p>We provide a seamless way to report emergencies in real time to help law enforcement respond faster and more efficiently.</p>
+  <footer class="modern-footer">
+    <div class="footer-top">
+      <div class="footer-content">
+        <div class="footer-section brand-section">
+          <h4 class="footer-logo">UPF-emSERVICE</h4>
+          <p class="brand-description">We provide a seamless way to report emergencies in real time to help law enforcement respond faster and more efficiently.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section links-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section contact-section">
+          <h4>Contact Info</h4>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>123 Main Street, Cityville</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>support@emergencyservices.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+1 234 567 890</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-section newsletter-section">
+          <h4>Stay Updated</h4>
+          <p>Subscribe to our newsletter for updates and safety tips.</p>
+          <form class="newsletter-form">
+            <div class="form-group">
+              <input type="email" placeholder="Enter your email" class="newsletter-input">
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="footer-section">
-        <h4>Important Links</h4>
-        <ul>
-          <li><a href="how-it-works.html">How It Works</a></li>
-          <li><a href="faqs.html">FAQs</a></li>
-          <li><a href="contact.html">Contact Support</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Contact Us</h4>
-        <p>Address: 123 Main Street, Cityville</p>
-        <p>Email: support@emergencyservices.com</p>
-        <p>Phone: +1 234 567 890</p>
-        <div class="social-media">
-          <a href="#">Facebook</a>
-          <a href="#">Twitter</a>
-          <a href="#">Instagram</a>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-content">
+        <p class="copyright">&copy; 2024 UPF-emSERVICE. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Policy</a>
         </div>
       </div>
     </div>

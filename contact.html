@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Report Emergency - Emergency Services Platform</title>
+  <title>Contact Support - Emergency Services Platform</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -39,138 +39,130 @@
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="report-emergency-main">
-    <!-- Emergency Report Hero -->
-    <section class="report-hero">
-      <div class="report-hero-content">
-        <h2>Report an Emergency</h2>
-        <p>Quick and secure emergency reporting system. Your safety is our priority.</p>
+  <!-- Main Section -->
+  <main class="contact-main">
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+      <div class="hero-content">
+        <h2>Contact Support</h2>
+        <p>We're here to help with any questions or concerns about our emergency response platform</p>
       </div>
     </section>
 
-    <!-- Emergency Report Form Section -->
-    <section class="report-form-section">
-      <div class="report-container">
-        <div class="emergency-type-selector">
-          <h3>Select Emergency Type</h3>
-          <div class="emergency-type-grid">
-            <div class="type-card" data-type="medical">
-              <i class="fas fa-ambulance"></i>
-              <span>Medical</span>
+    <div class="contact-container">
+      <!-- Contact Information Cards -->
+      <section class="contact-info-section">
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="card-icon">
+              <i class="fas fa-headset"></i>
             </div>
-            <div class="type-card" data-type="fire">
-              <i class="fas fa-fire"></i>
-              <span>Fire</span>
+            <h3>24/7 Support</h3>
+            <p>Our support team is available round the clock</p>
+            <div class="contact-details">
+              <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+              <p><i class="fas fa-envelope"></i> support@emergencyservices.com</p>
             </div>
-            <div class="type-card" data-type="police">
-              <i class="fas fa-shield-alt"></i>
-              <span>Police</span>
+          </div>
+
+          <div class="info-card">
+            <div class="card-icon">
+              <i class="fas fa-map-marked-alt"></i>
             </div>
-            <div class="type-card" data-type="disaster">
-              <i class="fas fa-house-damage"></i>
-              <span>Natural Disaster</span>
+            <h3>Main Office</h3>
+            <p>Visit our headquarters</p>
+            <div class="contact-details">
+              <p><i class="fas fa-location-dot"></i> 123 Main Street</p>
+              <p>Cityville, State 12345</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="card-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Business Hours</h3>
+            <p>For non-emergency inquiries</p>
+            <div class="contact-details">
+              <p><i class="fas fa-calendar"></i> Monday - Friday</p>
+              <p><i class="far fa-clock"></i> 9:00 AM - 5:00 PM</p>
             </div>
           </div>
         </div>
+      </section>
 
-        <form class="emergency-report-form">
-          <div class="form-section">
-            <h3>Emergency Details</h3>
+      <!-- Contact Form Section -->
+      <section class="contact-form-section">
+        <div class="form-container">
+          <h3>Send Us a Message</h3>
+          <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+          
+          <form class="contact-form">
             <div class="form-row">
               <div class="form-group">
-                <label for="reporter-name">Your Name</label>
-                <input type="text" id="reporter-name" required placeholder="Enter your full name">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
               </div>
               <div class="form-group">
-                <label for="contact-number">Contact Number</label>
-                <input type="tel" id="contact-number" required placeholder="Enter your phone number">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select a subject</option>
+                  <option value="technical">Technical Support</option>
+                  <option value="account">Account Issues</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="other">Other</option>
+                </select>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="emergency-description">Describe the Emergency</label>
-              <textarea id="emergency-description" rows="4" required placeholder="Provide detailed information about the emergency"></textarea>
-            </div>
-          </div>
-
-          <div class="form-section">
-            <h3>Location Information</h3>
-            <div class="location-options">
-              <button type="button" class="location-btn">
-                <i class="fas fa-location-dot"></i>
-                Use Current Location
-              </button>
-              <span>OR</span>
-              <div class="form-group">
-                <label for="manual-address">Enter Address Manually</label>
-                <input type="text" id="manual-address" placeholder="Enter the emergency location">
-              </div>
-            </div>
-            <div class="map-container">
-              <!-- Map will be integrated here -->
-              <div class="map-placeholder">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Map Loading...</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-section">
-            <h3>Additional Information</h3>
-            <div class="media-upload">
-              <label for="media-files">
-                <i class="fas fa-camera"></i>
-                <span>Upload Photos/Videos</span>
-                <small>Optional - Help responders better understand the situation</small>
-              </label>
-              <input type="file" id="media-files" multiple accept="image/*,video/*" class="file-input">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Type your message here..."></textarea>
             </div>
 
             <div class="form-group">
-              <label for="additional-notes">Additional Notes</label>
-              <textarea id="additional-notes" rows="3" placeholder="Any other important information"></textarea>
+              <button type="submit" class="submit-btn">Send Message</button>
             </div>
-          </div>
+          </form>
+        </div>
+      </section>
 
-          <div class="form-actions">
-            <button type="submit" class="submit-emergency-btn">
-              <i class="fas fa-exclamation-triangle"></i>
-              Report Emergency Now
-            </button>
+      <!-- FAQ Preview Section -->
+      <section class="faq-preview-section">
+        <div class="section-header">
+          <h3>Frequently Asked Questions</h3>
+          <p>Find quick answers to common questions</p>
+        </div>
+        <div class="faq-preview-grid">
+          <div class="faq-preview-card">
+            <h4>How do I report an emergency?</h4>
+            <p>Use our mobile app or website to quickly report emergencies with location sharing and multimedia support.</p>
+            <a href="faqs.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
           </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- Emergency Tips Section -->
-    <section class="emergency-tips">
-      <div class="tips-container">
-        <h3>Important Tips While Waiting</h3>
-        <div class="tips-grid">
-          <div class="tip-card">
-            <i class="fas fa-heart"></i>
-            <h4>Stay Calm</h4>
-            <p>Take deep breaths and try to remain as calm as possible</p>
+          <div class="faq-preview-card">
+            <h4>Is my information secure?</h4>
+            <p>We use industry-standard encryption to protect all user data and emergency reports.</p>
+            <a href="faqs.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
           </div>
-          <div class="tip-card">
-            <i class="fas fa-phone"></i>
-            <h4>Stay on Line</h4>
-            <p>Keep your phone line open for emergency services to contact you</p>
-          </div>
-          <div class="tip-card">
-            <i class="fas fa-eye"></i>
-            <h4>Stay Alert</h4>
-            <p>Monitor the situation and note any changes</p>
-          </div>
-          <div class="tip-card">
-            <i class="fas fa-door-open"></i>
-            <h4>Clear Access</h4>
-            <p>Ensure easy access for emergency responders</p>
+          <div class="faq-preview-card">
+            <h4>What areas do you cover?</h4>
+            <p>Our service is available in multiple cities with 24/7 emergency response coordination.</p>
+            <a href="faqs.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <!-- Footer -->

@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How It Works - Emergency Services</title>
+  <title>How It Works - Emergency Services Platform</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="how-it-works.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
   <!-- Header -->
   <header>
     <div class="header-content">
@@ -18,11 +17,17 @@
       <nav class="navigation">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="report-emergency.html">Report an Emergency</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
           <li><a href="faqs.html">FAQs</a></li>
           <li><a href="contact.html">Contact Support</a></li>
         </ul>
       </nav>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+      </div>
       <div class="auth-buttons">
         <button class="signup-btn">Sign Up</button>
       </div>
@@ -35,49 +40,224 @@
   </header>
 
   <!-- Main Section -->
-  <main>
-    <section class="how-it-works-section">
+  <main class="hiw-main">
+    <section class="hiw-hero">
       <h2>How It Works</h2>
-      <p>Our service makes reporting emergencies easy and efficient. Here's how the process works:</p>
+      <p>Learn how our emergency response platform helps save lives</p>
+    </section>
 
-      <div class="steps-container">
-        <div class="step">
-          <h3>Step 1: Identify the Emergency</h3>
-          <p>Quickly assess the situation and identify the type of emergency, whether it's a fire, accident, medical issue, or crime.</p>
+    <section class="hiw-container">
+      <!-- Process Timeline -->
+      <div class="process-timeline">
+        <div class="timeline-item active" data-step="1">
+          <div class="timeline-icon">
+            <i class="fas fa-user-plus"></i>
+          </div>
+          <div class="timeline-content">
+            <h3>Create an Account</h3>
+            <p>Sign up with your details to get started. Your information is kept secure and confidential.</p>
+            <div class="timeline-features">
+              <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <span>Secure Registration</span>
+              </div>
+              <div class="feature">
+                <i class="fas fa-bolt"></i>
+                <span>Quick Process</span>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <div class="step">
-          <h3>Step 2: Fill Out the Report Form</h3>
-          <p>Use our user-friendly form to provide a detailed description of the emergency. Include any photos, videos, or additional information that can help.</p>
+
+        <div class="timeline-item" data-step="2">
+          <div class="timeline-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div class="timeline-content">
+            <h3>Enable Location Services</h3>
+            <p>Allow location access for accurate emergency response coordination.</p>
+            <div class="timeline-features">
+              <div class="feature">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Precise Location</span>
+              </div>
+              <div class="feature">
+                <i class="fas fa-user-shield"></i>
+                <span>Privacy Protected</span>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <div class="step">
-          <h3>Step 3: Submit the Report</h3>
-          <p>After completing the form, submit it. Your report will be sent directly to the appropriate emergency services or authorities.</p>
+
+        <div class="timeline-item" data-step="3">
+          <div class="timeline-icon">
+            <i class="fas fa-exclamation-circle"></i>
+          </div>
+          <div class="timeline-content">
+            <h3>Report Emergency</h3>
+            <p>Report incidents quickly with our intuitive interface. Add photos, videos, or voice recordings.</p>
+            <div class="timeline-features">
+              <div class="feature">
+                <i class="fas fa-camera"></i>
+                <span>Media Upload</span>
+              </div>
+              <div class="feature">
+                <i class="fas fa-microphone"></i>
+                <span>Voice Recording</span>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <div class="step">
-          <h3>Step 4: Assistance is on the Way</h3>
-          <p>Emergency services will review your report and dispatch help as soon as possible to handle the situation promptly.</p>
+
+        <div class="timeline-item" data-step="4">
+          <div class="timeline-icon">
+            <i class="fas fa-truck"></i>
+          </div>
+          <div class="timeline-content">
+            <h3>Immediate Response</h3>
+            <p>Emergency services are dispatched immediately with your location and incident details.</p>
+            <div class="timeline-features">
+              <div class="feature">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Quick Dispatch</span>
+              </div>
+              <div class="feature">
+                <i class="fas fa-route"></i>
+                <span>Route Optimization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-step="5">
+          <div class="timeline-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div class="timeline-content">
+            <h3>Real-time Updates</h3>
+            <p>Receive status updates and communicate with responders in real-time.</p>
+            <div class="timeline-features">
+              <div class="feature">
+                <i class="fas fa-bell"></i>
+                <span>Live Notifications</span>
+              </div>
+              <div class="feature">
+                <i class="fas fa-comment-dots"></i>
+                <span>Direct Communication</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Demo -->
+      <div class="interactive-demo">
+        <h3>Try Our Demo</h3>
+        <div class="demo-container">
+          <div class="demo-screen">
+            <div class="demo-content">
+              <img src="images/demo-screen.png" alt="Platform Demo" class="demo-image">
+              <div class="demo-overlay">
+                <button class="demo-btn">Watch Demo Video</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Features -->
+      <div class="additional-features">
+        <h3>Key Platform Features</h3>
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="fas fa-clock"></i>
+            <h4>24/7 Availability</h4>
+            <p>Round-the-clock emergency response service</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-language"></i>
+            <h4>Multi-language Support</h4>
+            <p>Available in multiple languages</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-hand-holding-medical"></i>
+            <h4>Medical Integration</h4>
+            <p>Direct connection to medical services</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-history"></i>
+            <h4>Incident History</h4>
+            <p>Track and review past incidents</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>Contact Us</h4>
-        <p>Email: support@emergencyservices.com</p>
-        <p>Phone: +1 234 567 890</p>
+  <footer class="modern-footer">
+    <div class="footer-top">
+      <div class="footer-content">
+        <div class="footer-section brand-section">
+          <h4 class="footer-logo">UPF-emSERVICE</h4>
+          <p class="brand-description">We provide a seamless way to report emergencies in real time to help law enforcement respond faster and more efficiently.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section links-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section contact-section">
+          <h4>Contact Info</h4>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>123 Main Street, Cityville</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>support@emergencyservices.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+1 234 567 890</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-section newsletter-section">
+          <h4>Stay Updated</h4>
+          <p>Subscribe to our newsletter for updates and safety tips.</p>
+          <form class="newsletter-form">
+            <div class="form-group">
+              <input type="email" placeholder="Enter your email" class="newsletter-input">
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="footer-section">
-        <h4>Follow Us</h4>
-        <div class="social-media">
-          <a href="#">Facebook</a>
-          <a href="#">Twitter</a>
-          <a href="#">Instagram</a>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-content">
+        <p class="copyright">&copy; 2024 UPF-emSERVICE. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Policy</a>
         </div>
       </div>
     </div>
