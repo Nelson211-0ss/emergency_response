@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report an Emergency - Emergency Services</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="reportemergency.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <h1>UPF-emSERVICE</h1>
+      </div>
+      <nav class="navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+          <li><a href="contact.html">Contact Support</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="signup-btn">Sign Up</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+
+    <!-- Main Section -->
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>What's Happening?</p>
+        <a href="report-emergency.html" class="cta-btn">Report an Emergency</a>
+      </div>
+    </section>
+
+    <section class="report-form-section">
+      <h2>Report an Emergency</h2>
+      <p>Please fill out the form below to report an emergency. Your information will be sent to the appropriate authorities.</p>
+      
+      <form action="#" method="POST" enctype="multipart/form-data" class="report-form">
+        
+        <!-- Emergency Type -->
+        <div class="form-group">
+          <label for="emergency-type">Type of Emergency</label>
+          <select id="emergency-type" name="emergency-type" required>
+            <option value="fire">Fire</option>
+            <option value="accident">Accident</option>
+            <option value="medical">Medical</option>
+            <option value="crime">Crime</option>
+          </select>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label for="description">Description of Emergency</label>
+          <textarea id="description" name="description" rows="5" required placeholder="Describe the emergency in detail..."></textarea>
+        </div>
+
+        <!-- Multimedia Upload -->
+        <div class="form-group">
+          <label for="media">Upload Multimedia Evidence (Photos/Videos)</label>
+          <input type="file" id="media" name="media" accept="image/*,video/*" multiple>
+        </div>
+
+        <!-- Location -->
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" placeholder="Enter your location or use GPS" required>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+          <button type="submit" class="cta-btn">Submit Report</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>Email: support@emergencyservices.com</p>
+        <p>Phone: +1 234 567 890</p>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-media">
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
