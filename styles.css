@@ -80,6 +80,22 @@
     background-color: #ffcc99;
   }
   
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-right: 20px;
+  }
+  
+  .social-icon {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #ffcc99;
+  }
+  
   .hamburger {
     display: none;
     flex-direction: column;
@@ -253,6 +269,13 @@
   
     .footer-section {
       margin-bottom: 20px;
+    }
+  
+    .social-icons {
+      margin: 10px 0;
+      justify-content: center;
+      width: 100%;
+      order: 2;
     }
   }
   
