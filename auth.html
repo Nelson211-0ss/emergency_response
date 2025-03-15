@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up / Login - Emergency Services Platform</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <h1>UPF-emSERVICE</h1>
+      </div>
+      <nav class="navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+          <li><a href="contact.html">Contact Support</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="auth-buttons">
+        <button class="signup-btn">Sign Up</button>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="auth-main">
+    <section class="auth-container">
+      <div class="auth-box">
+        <div class="auth-header">
+          <div class="auth-switches">
+            <button class="auth-switch active" data-form="signup">Sign Up</button>
+            <button class="auth-switch" data-form="login">Login</button>
+          </div>
+        </div>
+
+        <!-- Sign Up Form -->
+        <form id="signupForm" class="auth-form active">
+          <h2>Create Account</h2>
+          <p>Join our emergency response platform</p>
+
+          <div class="form-group">
+            <label for="signup-fullname">Full Name</label>
+            <div class="input-with-icon">
+              <i class="fas fa-user"></i>
+              <input type="text" id="signup-fullname" required placeholder="Enter your full name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-email">Email Address</label>
+            <div class="input-with-icon">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="signup-email" required placeholder="Enter your email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-phone">Phone Number</label>
+            <div class="input-with-icon">
+              <i class="fas fa-phone"></i>
+              <input type="tel" id="signup-phone" required placeholder="Enter your phone number">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <div class="input-with-icon">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="signup-password" required placeholder="Create a password">
+              <button type="button" class="toggle-password">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signup-confirm-password">Confirm Password</label>
+            <div class="input-with-icon">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="signup-confirm-password" required placeholder="Confirm your password">
+              <button type="button" class="toggle-password">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-container">
+              <input type="checkbox" required>
+              <span class="checkmark"></span>
+              I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+            </label>
+          </div>
+
+          <button type="submit" class="auth-submit">Create Account</button>
+
+          <div class="social-auth">
+            <p>Or sign up with</p>
+            <div class="social-auth-buttons">
+              <button type="button" class="social-auth-btn google">
+                <i class="fab fa-google"></i>
+                Google
+              </button>
+              <button type="button" class="social-auth-btn facebook">
+                <i class="fab fa-facebook-f"></i>
+                Facebook
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="auth-form">
+          <h2>Welcome Back</h2>
+          <p>Log in to your account</p>
+
+          <div class="form-group">
+            <label for="login-email">Email Address</label>
+            <div class="input-with-icon">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="login-email" required placeholder="Enter your email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <div class="input-with-icon">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="login-password" required placeholder="Enter your password">
+              <button type="button" class="toggle-password">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="remember-forgot">
+              <label class="checkbox-container">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                Remember me
+              </label>
+              <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+          </div>
+
+          <button type="submit" class="auth-submit">Log In</button>
+
+          <div class="social-auth">
+            <p>Or log in with</p>
+            <div class="social-auth-buttons">
+              <button type="button" class="social-auth-btn google">
+                <i class="fab fa-google"></i>
+                Google
+              </button>
+              <button type="button" class="social-auth-btn facebook">
+                <i class="fab fa-facebook-f"></i>
+                Facebook
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="modern-footer">
+    <div class="footer-bottom">
+      <div class="footer-content">
+        <p class="copyright">&copy; 2024 UPF-emSERVICE. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> 

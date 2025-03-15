@@ -285,4 +285,226 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Demo video feature coming soon!');
     });
   }
+});
+
+// Live Chat Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const chatToggle = document.getElementById('chatToggle');
+    const chatContainer = document.getElementById('chatContainer');
+    const minimizeChat = document.getElementById('minimizeChat');
+    const closeChat = document.getElementById('closeChat');
+    const chatInput = document.getElementById('chatInput');
+    const sendMessage = document.getElementById('sendMessage');
+    const chatMessages = document.getElementById('chatMessages');
+    const notificationBadge = document.querySelector('.notification-badge');
+
+    // Toggle chat window
+    chatToggle.addEventListener('click', () => {
+        chatContainer.classList.toggle('active');
+        notificationBadge.style.display = 'none';
+    });
+
+    // Minimize chat
+    minimizeChat.addEventListener('click', () => {
+        chatContainer.classList.remove('active');
+    });
+
+    // Close chat
+    closeChat.addEventListener('click', () => {
+        chatContainer.classList.remove('active');
+    });
+
+    // Send message function
+    function sendUserMessage(message) {
+        if (!message.trim()) return;
+
+        const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        
+        // Add user message
+        const userMessage = document.createElement('div');
+        userMessage.className = 'message user';
+        userMessage.innerHTML = `
+            <p>${message}</p>
+            <span class="message-time">${time}</span>
+        `;
+        chatMessages.appendChild(userMessage);
+
+        // Clear input
+        chatInput.value = '';
+
+        // Scroll to bottom
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        // Simulate agent response after 1 second
+        setTimeout(() => {
+            const responses = [
+                "I understand your concern. Let me help you with that.",
+                "Thank you for reaching out. An emergency responder will be with you shortly.",
+                "Your safety is our priority. Please stay on the line.",
+                "I'm connecting you with the appropriate emergency service.",
+                "Could you please provide more details about the situation?"
+            ];
+            const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+            
+            const agentMessage = document.createElement('div');
+            agentMessage.className = 'message agent';
+            agentMessage.innerHTML = `
+                <p>${randomResponse}</p>
+                <span class="message-time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+            `;
+            chatMessages.appendChild(agentMessage);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 1000);
+    }
+
+    // Send message on button click
+    sendMessage.addEventListener('click', () => {
+        sendUserMessage(chatInput.value);
+    });
+
+    // Send message on Enter key
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendUserMessage(chatInput.value);
+        }
+    });
+
+    // Handle file attachment
+    const attachBtn = document.querySelector('.attach-btn');
+    attachBtn.addEventListener('click', () => {
+        // Create a file input element
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = 'image/*';
+        
+        fileInput.click();
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                const fileName = fileInput.files[0].name;
+                sendUserMessage(`📎 Attached: ${fileName}`);
+            }
+        });
+    });
+
+    // Auto-response after 3 seconds of page load
+    setTimeout(() => {
+        if (!chatContainer.classList.contains('active')) {
+            notificationBadge.style.display = 'flex';
+        }
+    }, 3000);
+});
+
+// Authentication Page Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // Form switching
+  const authSwitches = document.querySelectorAll('.auth-switch');
+  const authForms = document.querySelectorAll('.auth-form');
+
+  authSwitches.forEach(switch_ => {
+    switch_.addEventListener('click', () => {
+      const formType = switch_.dataset.form;
+      
+      // Update active switch
+      authSwitches.forEach(s => s.classList.remove('active'));
+      switch_.classList.add('active');
+      
+      // Show corresponding form
+      authForms.forEach(form => {
+        if (form.id === `${formType}Form`) {
+          form.classList.add('active');
+        } else {
+          form.classList.remove('active');
+        }
+      });
+    });
+  });
+
+  // Password visibility toggle
+  const togglePasswordButtons = document.querySelectorAll('.toggle-password');
+  
+  togglePasswordButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const input = this.parentElement.querySelector('input');
+      const icon = this.querySelector('i');
+      
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+      }
+    });
+  });
+
+  // Form validation and submission
+  const signupForm = document.getElementById('signupForm');
+  const loginForm = document.getElementById('loginForm');
+
+  if (signupForm) {
+    signupForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const password = document.getElementById('signup-password').value;
+      const confirmPassword = document.getElementById('signup-confirm-password').value;
+      
+      if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+      
+      // Here you would typically send the data to your backend
+      const formData = {
+        fullName: document.getElementById('signup-fullname').value,
+        email: document.getElementById('signup-email').value,
+        phone: document.getElementById('signup-phone').value,
+        password: password
+      };
+      
+      console.log('Signup form data:', formData);
+      // Add your API call here
+      alert('Account created successfully!');
+    });
+  }
+
+  if (loginForm) {
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Here you would typically send the data to your backend
+      const formData = {
+        email: document.getElementById('login-email').value,
+        password: document.getElementById('login-password').value,
+        rememberMe: this.querySelector('input[type="checkbox"]').checked
+      };
+      
+      console.log('Login form data:', formData);
+      // Add your API call here
+      alert('Logged in successfully!');
+    });
+  }
+
+  // Social authentication
+  const socialAuthButtons = document.querySelectorAll('.social-auth-btn');
+  
+  socialAuthButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const provider = this.classList.contains('google') ? 'Google' : 'Facebook';
+      // Here you would implement the social authentication logic
+      console.log(`Authenticating with ${provider}...`);
+    });
+  });
+});
+
+// Handle sign-up button clicks
+document.addEventListener('DOMContentLoaded', function() {
+  const signupButtons = document.querySelectorAll('.signup-btn');
+  signupButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      window.location.href = 'auth.html';
+    });
+  });
 }); 

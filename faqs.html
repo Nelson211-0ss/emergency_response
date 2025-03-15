@@ -29,7 +29,7 @@
         <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
       </div>
       <div class="auth-buttons">
-        <button class="signup-btn">Sign Up</button>
+        <a href="auth.html" class="signup-btn">Sign Up</a>
       </div>
       <div class="hamburger" id="hamburger">
         <div class="bar"></div>
@@ -218,6 +218,50 @@
       </div>
     </div>
   </footer>
+
+  <!-- Live Chat Widget -->
+  <div class="chat-widget">
+    <button class="chat-toggle" id="chatToggle">
+      <i class="fas fa-comments"></i>
+      <span class="notification-badge">1</span>
+    </button>
+    
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-header">
+        <div class="chat-title">
+          <i class="fas fa-headset"></i>
+          <h3>Emergency Support</h3>
+        </div>
+        <div class="chat-actions">
+          <button class="minimize-btn" id="minimizeChat">
+            <i class="fas fa-minus"></i>
+          </button>
+          <button class="close-btn" id="closeChat">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="chat-messages" id="chatMessages">
+        <div class="message system">
+          <p>Welcome to Emergency Support. How can we help you today?</p>
+          <span class="message-time">Just now</span>
+        </div>
+      </div>
+      
+      <div class="chat-input-area">
+        <div class="input-wrapper">
+          <input type="text" id="chatInput" placeholder="Type your message...">
+          <button class="attach-btn">
+            <i class="fas fa-paperclip"></i>
+          </button>
+        </div>
+        <button class="send-btn" id="sendMessage">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
