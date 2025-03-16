@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Officer Dashboard - Emergency Response</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Include Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Include Leaflet for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>Emergency Response</h1>
+            </div>
+            <nav class="navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="report-emergency.html">Report Emergency</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="officer-profile">
+                <span class="officer-name">Officer John Doe</span>
+                <img src="https://via.placeholder.com/40" alt="Officer Profile" class="officer-avatar">
+            </div>
+        </div>
+    </header>
+
+    <!-- Add this after the header navigation -->
+    <div class="notification-center">
+        <button class="notification-toggle">
+            <i class="fas fa-bell"></i>
+            <span class="notification-badge">0</span>
+        </button>
+        <div class="notification-panel">
+            <div class="notification-header">
+                <h3>Notifications</h3>
+                <div class="notification-actions">
+                    <button class="settings-btn" title="Notification Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button class="mark-all-btn" title="Mark All as Read">
+                        <i class="fas fa-check-double"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="notification-list">
+                <!-- Notifications will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="dashboard-sidebar">
+                <nav class="dashboard-nav">
+                    <ul>
+                        <li class="active">
+                            <a href="#"><i class="fas fa-home"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-bell"></i> Active Alerts</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-history"></i> Report History</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-map-marked-alt"></i> Area Overview</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-chart-line"></i> Analytics</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="dashboard-content">
+                <!-- Overview Cards -->
+                <div class="overview-cards">
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Active Emergencies</h3>
+                            <p class="card-number">12</p>
+                            <span class="trend up">+3 from yesterday</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Pending Response</h3>
+                            <p class="card-number">5</p>
+                            <span class="trend down">-2 from yesterday</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Resolved Today</h3>
+                            <p class="card-number">28</p>
+                            <span class="trend up">+5 from yesterday</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Officers on Duty</h3>
+                            <p class="card-number">45</p>
+                            <span class="trend neutral">Same as yesterday</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map and Live Feed Section -->
+                <div class="dashboard-grid">
+                    <!-- Emergency Map -->
+                    <div class="dashboard-map">
+                        <div class="section-header">
+                            <h2>Emergency Map</h2>
+                            <div class="map-controls">
+                                <button class="control-btn active">All</button>
+                                <button class="control-btn">Critical</button>
+                                <button class="control-btn">Active</button>
+                                <button class="control-btn">Resolved</button>
+                            </div>
+                        </div>
+                        <div id="emergencyMap"></div>
+                    </div>
+
+                    <!-- Live Feed -->
+                    <div class="live-feed">
+                        <div class="section-header">
+                            <h2>Live Emergency Feed</h2>
+                            <div class="feed-controls">
+                                <select class="feed-filter">
+                                    <option value="all">All Types</option>
+                                    <option value="fire">Fire</option>
+                                    <option value="medical">Medical</option>
+                                    <option value="police">Police</option>
+                                </select>
+                                <button class="refresh-btn">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="feed-container">
+                            <div class="feed-item urgent">
+                                <div class="feed-time">2 min ago</div>
+                                <div class="feed-content">
+                                    <h3>Armed Robbery in Progress</h3>
+                                    <p>Main Street Bank, Downtown Area</p>
+                                    <div class="feed-tags">
+                                        <span class="tag critical">Critical</span>
+                                        <span class="tag type">Police</span>
+                                    </div>
+                                </div>
+                                <button class="action-btn">Respond</button>
+                            </div>
+                            <div class="feed-item">
+                                <div class="feed-time">5 min ago</div>
+                                <div class="feed-content">
+                                    <h3>Traffic Accident</h3>
+                                    <p>Highway 101, North Junction</p>
+                                    <div class="feed-tags">
+                                        <span class="tag high">High Priority</span>
+                                        <span class="tag type">Traffic</span>
+                                    </div>
+                                </div>
+                                <button class="action-btn">Respond</button>
+                            </div>
+                            <div class="feed-item">
+                                <div class="feed-time">12 min ago</div>
+                                <div class="feed-content">
+                                    <h3>Domestic Disturbance</h3>
+                                    <p>123 Oak Street, Residential Area</p>
+                                    <div class="feed-tags">
+                                        <span class="tag medium">Medium Priority</span>
+                                        <span class="tag type">Police</span>
+                                    </div>
+                                </div>
+                                <button class="action-btn">Respond</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Section -->
+                <div class="analytics-section">
+                    <div class="chart-container">
+                        <div class="section-header">
+                            <h2>Emergency Trends</h2>
+                            <div class="chart-controls">
+                                <button class="control-btn active">Daily</button>
+                                <button class="control-btn">Weekly</button>
+                                <button class="control-btn">Monthly</button>
+                            </div>
+                        </div>
+                        <canvas id="emergencyTrends"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <div class="section-header">
+                            <h2>Response Time Analysis</h2>
+                            <div class="chart-controls">
+                                <button class="control-btn active">All Types</button>
+                                <button class="control-btn">By Priority</button>
+                            </div>
+                        </div>
+                        <canvas id="responseAnalysis"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add this before the closing body tag -->
+    <div class="notification-settings-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Notification Settings</h2>
+                <button class="close-modal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-section">
+                    <h3>Region</h3>
+                    <select id="regionPreference">
+                        <option value="all">All Regions</option>
+                        <option value="downtown">Downtown</option>
+                        <option value="north">North District</option>
+                        <option value="south">South District</option>
+                        <option value="east">East District</option>
+                        <option value="west">West District</option>
+                    </select>
+                </div>
+                <div class="settings-section">
+                    <h3>Priority Levels</h3>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" value="critical" checked> Critical
+                        </label>
+                        <label>
+                            <input type="checkbox" value="high" checked> High
+                        </label>
+                        <label>
+                            <input type="checkbox" value="medium"> Medium
+                        </label>
+                        <label>
+                            <input type="checkbox" value="low"> Low
+                        </label>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3>Notification Channels</h3>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" value="push" checked> Push Notifications
+                        </label>
+                        <label>
+                            <input type="checkbox" value="email" checked> Email
+                        </label>
+                        <label>
+                            <input type="checkbox" value="sms"> SMS
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn">Cancel</button>
+                <button class="save-btn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html> 

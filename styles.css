@@ -2820,3 +2820,711 @@
     }
   }
   
+  /* Police Dashboard Styles */
+  .dashboard-main {
+    padding-top: 80px;
+    min-height: 100vh;
+    background-color: #f8f8f8;
+  }
+
+  .dashboard-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+
+  /* Sidebar Styles */
+  .dashboard-sidebar {
+    width: 250px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 120px);
+    position: sticky;
+    top: 100px;
+  }
+
+  .dashboard-nav ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .dashboard-nav li {
+    margin-bottom: 10px;
+  }
+
+  .dashboard-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    color: #666;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .dashboard-nav li.active a,
+  .dashboard-nav a:hover {
+    background-color: #fff0f0;
+    color: #fe0000;
+  }
+
+  .dashboard-nav i {
+    width: 20px;
+    text-align: center;
+  }
+
+  /* Main Content Styles */
+  .dashboard-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Overview Cards */
+  .overview-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #fff0f0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #fe0000;
+  }
+
+  .card-info h3 {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+
+  .card-number {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+  }
+
+  .trend {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .trend.up {
+    color: #22c55e;
+  }
+
+  .trend.down {
+    color: #ef4444;
+  }
+
+  .trend.neutral {
+    color: #666;
+  }
+
+  /* Dashboard Grid */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 20px;
+  }
+
+  /* Map Styles */
+  .dashboard-map {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #emergencyMap {
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  /* Section Headers */
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .section-header h2 {
+    font-size: 20px;
+    color: #333;
+  }
+
+  /* Control Buttons */
+  .control-btn {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 6px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .control-btn.active,
+  .control-btn:hover {
+    background-color: #fe0000;
+    border-color: #fe0000;
+    color: white;
+  }
+
+  .map-controls,
+  .chart-controls {
+    display: flex;
+    gap: 10px;
+  }
+
+  /* Live Feed */
+  .live-feed {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .feed-controls {
+    display: flex;
+    gap: 10px;
+  }
+
+  .feed-filter {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    color: #666;
+  }
+
+  .refresh-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: white;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .refresh-btn:hover {
+    background-color: #f8f8f8;
+    color: #fe0000;
+  }
+
+  .feed-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .feed-item {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .feed-item.urgent {
+    background-color: #fff0f0;
+    border: 1px solid #fecaca;
+  }
+
+  .feed-time {
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap;
+  }
+
+  .feed-content {
+    flex: 1;
+  }
+
+  .feed-content h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+
+  .feed-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+  }
+
+  .feed-tags {
+    display: flex;
+    gap: 8px;
+  }
+
+  .tag {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .tag.critical {
+    background-color: #fee2e2;
+    color: #ef4444;
+  }
+
+  .tag.high {
+    background-color: #fef3c7;
+    color: #d97706;
+  }
+
+  .tag.medium {
+    background-color: #e0e7ff;
+    color: #4f46e5;
+  }
+
+  .tag.type {
+    background-color: #f3f4f6;
+    color: #666;
+  }
+
+  .action-btn {
+    padding: 8px 16px;
+    background-color: #fe0000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .action-btn:hover {
+    background-color: #cc0000;
+  }
+
+  /* Analytics Section */
+  .analytics-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+  }
+
+  .chart-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Officer Profile */
+  .officer-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+  }
+
+  .officer-name {
+    font-weight: 500;
+  }
+
+  .officer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .analytics-section {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+
+    .dashboard-sidebar {
+      width: 100%;
+      height: auto;
+      position: static;
+    }
+
+    .dashboard-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .dashboard-nav li {
+      margin: 0;
+      flex: 1;
+      min-width: 150px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .overview-cards {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .feed-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .action-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .section-header {
+      flex-direction: column;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .map-controls,
+    .chart-controls {
+      flex-wrap: wrap;
+    }
+
+    .control-btn {
+      flex: 1;
+      text-align: center;
+    }
+  }
+  
+  /* Notification Center Styles */
+  .notification-center {
+    position: relative;
+    margin-left: 20px;
+  }
+
+  .notification-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+  }
+
+  .notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ef4444;
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: none;
+  }
+
+  .notification-panel {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 350px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 1000;
+  }
+
+  .notification-panel.active {
+    display: block;
+  }
+
+  .notification-header {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .notification-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.1rem;
+  }
+
+  .notification-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .notification-actions button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+  }
+
+  .notification-actions button:hover {
+    color: #fe0000;
+  }
+
+  .notification-list {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+  }
+
+  .notification-item {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .notification-item:hover {
+    background-color: #f0f0f0;
+  }
+
+  .notification-item.unread {
+    background-color: #fff0f0;
+  }
+
+  .notification-item .notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    border: none;
+    margin-bottom: 5px;
+  }
+
+  .notification-item .notification-title {
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+  }
+
+  .notification-item .notification-time {
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  .notification-item .notification-content {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+  }
+
+  /* Notification Settings Modal */
+  .notification-settings-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+  }
+
+  .notification-settings-modal.active {
+    display: flex;
+  }
+
+  .modal-content {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  .close-modal {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+
+  .settings-section {
+    margin-bottom: 25px;
+  }
+
+  .settings-section h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .settings-section select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #fe0000;
+  }
+
+  .modal-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .modal-footer button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .cancel-btn {
+    background-color: #f0f0f0;
+    border: none;
+    color: #666;
+  }
+
+  .cancel-btn:hover {
+    background-color: #e0e0e0;
+  }
+
+  .save-btn {
+    background-color: #fe0000;
+    border: none;
+    color: white;
+  }
+
+  .save-btn:hover {
+    background-color: #cc0000;
+  }
+
+  /* Responsive Design for Notifications */
+  @media (max-width: 768px) {
+    .notification-panel {
+        position: fixed;
+        top: 70px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+        max-width: none;
+    }
+
+    .notification-settings-modal .modal-content {
+        width: 95%;
+        margin: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .notification-panel {
+        top: 60px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .settings-section h3 {
+        font-size: 1rem;
+    }
+
+    .modal-footer button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+  }
+  
