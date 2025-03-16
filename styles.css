@@ -217,25 +217,54 @@
   .section-header {
     text-align: center;
     margin-bottom: 50px;
+    padding: 0 20px;
+    width: 100%;
+    position: relative;
   }
   
+  .section-header h2,
   .section-header h3 {
     font-size: 2.5rem;
     color: #333;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    display: block;
+  }
+  
+  .section-header h2::after,
+  .section-header h3::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #fe0000;
   }
   
   .section-header p {
     font-size: 1.1rem;
     color: #666;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 30px auto 0;
+    text-align: center;
+    display: block;
+    clear: both;
   }
   
   /* Features Section */
   .features {
     padding: 80px 20px;
     background-color: white;
+    text-align: center;
+  }
+  
+  .features .section-header h3 {
+    text-align: center;
+    margin: 0 auto;
   }
   
   .features-grid {
@@ -291,14 +320,18 @@
   .how-it-works-preview {
     padding: 80px 20px;
     background-color: #f8f8f8;
+    text-align: center;
+  }
+  
+  .how-it-works-preview .section-header h3 {
+    text-align: center;
+    margin: 0 auto;
   }
   
   .steps-container {
     display: flex;
     justify-content: center;
     gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto 40px;
   }
   
   .step {
@@ -365,6 +398,12 @@
   .emergency-types {
     padding: 80px 20px;
     background-color: white;
+    text-align: center;
+  }
+  
+  .emergency-types .section-header h3 {
+    text-align: center;
+    margin: 0 auto;
   }
   
   .emergency-grid {
@@ -414,6 +453,15 @@
   .app-download {
     padding: 80px 20px;
     background-color: #f8f8f8;
+    text-align: center;
+  }
+  
+  .app-text h3 {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
   }
   
   .app-content {
@@ -426,12 +474,6 @@
   
   .app-text {
     flex: 1;
-  }
-  
-  .app-text h3 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
   }
   
   .app-text p {
@@ -494,6 +536,12 @@
   .testimonials {
     padding: 80px 20px;
     background-color: white;
+    text-align: center;
+  }
+  
+  .testimonials .section-header h3 {
+    text-align: center;
+    margin: 0 auto;
   }
   
   .testimonials-slider {
@@ -545,9 +593,9 @@
     .hero {
       padding: 80px 20px 40px;
       min-height: 60vh;
-    }
+  }
   
-    .hero h2 {
+  .hero h2 {
       font-size: 2.2rem;
     }
   
@@ -1034,7 +1082,7 @@
     }
   
     .feature-card {
-      padding: 20px;
+    padding: 20px;
     }
   }
   
@@ -1261,8 +1309,8 @@
   
     .footer-bottom .footer-content {
       flex-direction: column;
-      text-align: center;
-    }
+    text-align: center;
+  }
   
     .footer-bottom-links {
       justify-content: center;
@@ -1406,9 +1454,11 @@
   }
   
   .form-container h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
     color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
   }
   
   .form-container > p {
@@ -1483,9 +1533,11 @@
   }
   
   .faq-preview-section h3 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
     color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
   }
   
   .faq-preview-section .section-header p {
@@ -1628,16 +1680,16 @@
   
   /* Emergency Type Selector */
   .emergency-type-selector {
-    padding: 40px;
-    background-color: #f9f9f9;
-    border-bottom: 1px solid #eee;
+    padding: 40px 0;
+    text-align: center;
   }
   
   .emergency-type-selector h3 {
-    text-align: center;
-    margin-bottom: 30px;
+    font-size: 2.2rem;
     color: #333;
-    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
   }
   
   .emergency-type-grid {
@@ -1690,9 +1742,11 @@
   }
   
   .form-section h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
   }
   
   .form-row {
@@ -1858,10 +1912,11 @@
   }
   
   .tips-container h3 {
-    text-align: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #333;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
   }
   
   .tips-grid {
@@ -2046,7 +2101,7 @@
     }
 
     .emergency-stats {
-      flex-wrap: wrap;
+    flex-wrap: wrap;
       justify-content: space-around;
     }
 
@@ -2126,7 +2181,7 @@
 
   /* Enhanced Footer Responsiveness */
   @media (max-width: 1024px) {
-    .footer-content {
+  .footer-content {
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
     }
@@ -2210,7 +2265,7 @@
     }
 
     .app-btn {
-      width: 100%;
+    width: 100%;
       justify-content: center;
     }
   }
@@ -2581,7 +2636,7 @@
     .chat-toggle {
       width: 50px;
       height: 50px;
-      font-size: 1.3rem;
+    font-size: 1.3rem;
     }
   }
   
@@ -2920,7 +2975,7 @@
     color: #666;
     margin-bottom: 5px;
   }
-
+  
   .card-number {
     font-size: 24px;
     font-weight: 600;
@@ -3287,7 +3342,7 @@
     border-bottom: 1px solid #eee;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+      align-items: center;
   }
 
   .notification-header h3 {
@@ -3298,9 +3353,9 @@
 
   .notification-actions {
     display: flex;
-    gap: 10px;
-  }
-
+      gap: 10px;
+    }
+  
   .notification-actions button {
     background: none;
     border: none;
@@ -3338,7 +3393,7 @@
   }
 
   .notification-item .notification-header {
-    display: flex;
+      display: flex;
     justify-content: space-between;
     align-items: flex-start;
     padding: 0;
@@ -3438,7 +3493,7 @@
 
   .checkbox-group {
     display: flex;
-    flex-direction: column;
+      flex-direction: column;
     gap: 10px;
   }
 
@@ -3508,7 +3563,7 @@
         margin: 10px;
     }
   }
-
+  
   @media (max-width: 480px) {
     .notification-panel {
         top: 60px;
@@ -3519,12 +3574,95 @@
     }
 
     .settings-section h3 {
-        font-size: 1rem;
+      font-size: 1rem;
     }
 
     .modal-footer button {
         padding: 8px 15px;
         font-size: 0.9rem;
     }
+  }
+    /* Add these styles at the beginning of the file */
+  .navbar {
+    background-color: #fe0000;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar .logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+  }
+
+  .navbar .logo img {
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .navbar .logo span {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #ffcc99;
+  }
+
+  .auth-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .auth-buttons .login-btn {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .auth-buttons .login-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .auth-buttons .signup-btn {
+    background-color: white;
+    color: #fe0000;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .auth-buttons .signup-btn:hover {
+    background-color: #ffcc99;
   }
   
