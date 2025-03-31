@@ -74,45 +74,43 @@
           </div>
         </div>
 
-        <form class="emergency-report-form">
+        <form class="emergency-report-form" id="emergencyReportForm" enctype="multipart/form-data">
           <div class="form-section">
             <h3>Emergency Details</h3>
+            <input type="hidden" id="selectedEmergencyType" name="emergencyType" required>
             <div class="form-row">
               <div class="form-group">
                 <label for="reporter-name">Your Name</label>
-                <input type="text" id="reporter-name" required placeholder="Enter your full name">
+                <input type="text" id="reporter-name" name="reporterName" required placeholder="Enter your full name">
               </div>
               <div class="form-group">
                 <label for="contact-number">Contact Number</label>
-                <input type="tel" id="contact-number" required placeholder="Enter your phone number">
+                <input type="tel" id="contact-number" name="contactNumber" required placeholder="Enter your phone number">
               </div>
             </div>
 
             <div class="form-group">
               <label for="emergency-description">Describe the Emergency</label>
-              <textarea id="emergency-description" rows="4" required placeholder="Provide detailed information about the emergency"></textarea>
+              <textarea id="emergency-description" name="description" rows="4" required placeholder="Provide detailed information about the emergency"></textarea>
             </div>
           </div>
 
           <div class="form-section">
             <h3>Location Information</h3>
             <div class="location-options">
-              <button type="button" class="location-btn">
+              <button type="button" class="location-btn" id="getCurrentLocation">
                 <i class="fas fa-location-dot"></i>
                 Use Current Location
               </button>
               <span>OR</span>
               <div class="form-group">
                 <label for="manual-address">Enter Address Manually</label>
-                <input type="text" id="manual-address" placeholder="Enter the emergency location">
+                <input type="text" id="manual-address" name="manualAddress" placeholder="Enter the emergency location">
+                <input type="hidden" id="location-data" name="location" required>
               </div>
             </div>
             <div class="map-container">
-              <!-- Map will be integrated here -->
-              <div class="map-placeholder">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Map Loading...</span>
-              </div>
+              <div id="emergencyMap"></div>
             </div>
           </div>
 
@@ -124,12 +122,13 @@
                 <span>Upload Photos/Videos</span>
                 <small>Optional - Help responders better understand the situation</small>
               </label>
-              <input type="file" id="media-files" multiple accept="image/*,video/*" class="file-input">
+              <input type="file" id="media-files" name="media" multiple accept="image/*,video/*" class="file-input">
+              <div id="media-preview" class="media-preview"></div>
             </div>
 
             <div class="form-group">
               <label for="additional-notes">Additional Notes</label>
-              <textarea id="additional-notes" rows="3" placeholder="Any other important information"></textarea>
+              <textarea id="additional-notes" name="additionalNotes" rows="3" placeholder="Any other important information"></textarea>
             </div>
           </div>
 
@@ -287,5 +286,7 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="public/js/emergency-report.js"></script>
 </body>
 </html>

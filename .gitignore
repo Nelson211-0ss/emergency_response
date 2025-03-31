@@ -1,3 +1,5 @@
 .idea
 .vscode
 node_modules
+.env
+public/uploads/emergency-media/*

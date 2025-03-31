@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Emergency Response System</title>
+    <link href="./public/css/tailwind.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-2xl font-bold text-primary-600">Emergency Response</h1>
+                </div>
+                <nav class="hidden md:flex">
+                    <ul class="flex space-x-6">
+                        <li><a href="index.html" class="text-gray-600 hover:text-primary-600 transition-colors">Home</a></li>
+                        <li><a href="report-emergency.html" class="text-gray-600 hover:text-primary-600 transition-colors">Report Emergency</a></li>
+                        <li><a href="how-it-works.html" class="text-gray-600 hover:text-primary-600 transition-colors">How It Works</a></li>
+                        <li><a href="faqs.html" class="text-gray-600 hover:text-primary-600 transition-colors">FAQs</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-primary-600 transition-colors">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="flex items-center space-x-4 relative">
+                    <span class="text-gray-700 font-medium">Admin Dashboard</span>
+                    <div class="relative">
+                        <img src="images/icon.jpg" alt="Admin Profile" class="w-10 h-10 rounded-full object-cover cursor-pointer" id="profileButton">
+                        <div id="profileDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl z-50">
+                            <div class="py-1">
+                                <a href="auth.html" class="block px-4 py-2 text-red-600 hover:bg-red-50">
+                                    <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8">
+        <!-- Overview Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-red-100 text-red-500">
+                        <i class="fas fa-exclamation-triangle text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-gray-500 text-sm">Active Emergencies</h3>
+                        <p class="text-2xl font-semibold text-gray-700 card-number">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-yellow-100 text-yellow-500">
+                        <i class="fas fa-clock text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-gray-500 text-sm">Pending Response</h3>
+                        <p class="text-2xl font-semibold text-gray-700 card-number">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-green-100 text-green-500">
+                        <i class="fas fa-check-circle text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-gray-500 text-sm">Resolved Today</h3>
+                        <p class="text-2xl font-semibold text-gray-700 card-number">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map and Live Feed Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            <!-- Emergency Map -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Emergency Map</h2>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1 text-sm bg-primary-600 text-white rounded hover:bg-primary-700">All</button>
+                        <button class="px-3 py-1 text-sm bg-gray-100 text-gray-600 rounded hover:bg-gray-200">Critical</button>
+                        <button class="px-3 py-1 text-sm bg-gray-100 text-gray-600 rounded hover:bg-gray-200">Active</button>
+                        <button class="px-3 py-1 text-sm bg-gray-100 text-gray-600 rounded hover:bg-gray-200">Resolved</button>
+                    </div>
+                </div>
+                <div id="emergencyMap" class="h-[400px] w-full rounded-lg"></div>
+            </div>
+
+            <!-- Live Feed -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Live Emergency Feed</h2>
+                    <div class="flex space-x-2">
+                        <select class="px-3 py-1 text-sm bg-gray-100 text-gray-600 rounded border-gray-200">
+                            <option value="all">All Types</option>
+                            <option value="medical">Medical</option>
+                            <option value="fire">Fire</option>
+                            <option value="police">Police</option>
+                            <option value="disaster">Natural Disaster</option>
+                        </select>
+                        <button class="p-1 text-gray-600 hover:bg-gray-100 rounded">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="overflow-y-auto h-[400px] space-y-4 feed-container">
+                    <!-- Emergency feed items will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Emergency Trends</h2>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1 text-sm bg-primary-600 text-white rounded hover:bg-primary-700">Daily</button>
+                        <button class="px-3 py-1 text-sm bg-gray-100 text-gray-600 rounded hover:bg-gray-200">Weekly</button>
+                        <button class="px-3 py-1 text-sm bg-gray-100 text-gray-600 rounded hover:bg-gray-200">Monthly</button>
+                    </div>
+                </div>
+                <div class="h-[300px] relative">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Emergency Types</h2>
+                </div>
+                <div class="h-[300px] relative emergency-type-chart">
+                    <canvas id="emergencyTypeChart"></canvas>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Status Distribution</h2>
+                </div>
+                <div class="h-[300px] relative">
+                    <canvas id="statusChart"></canvas>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Emergency Details Modal -->
+    <div class="emergency-details-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Emergency Details</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Emergency Information -->
+                <div class="info-section">
+                    <h3>Emergency Information</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Type</label>
+                            <span id="emergency-type"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Status</label>
+                            <span id="emergency-status"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Priority</label>
+                            <span id="emergency-priority"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Time Reported</label>
+                            <span id="emergency-time"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reporter Information -->
+                <div class="info-section">
+                    <h3>Reporter Information</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Name</label>
+                            <span id="reporter-name"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Contact</label>
+                            <span id="reporter-contact"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="info-section">
+                    <h3>Description</h3>
+                    <p id="emergency-description"></p>
+                    <div class="info-item">
+                        <label>Additional Notes</label>
+                        <p id="emergency-notes"></p>
+                    </div>
+                </div>
+
+                <!-- Location Map -->
+                <div class="info-section">
+                    <h3>Location</h3>
+                    <div id="detail-map"></div>
+                </div>
+
+                <!-- Media Files -->
+                <div class="info-section">
+                    <h3>Media Files</h3>
+                    <div id="emergency-media" class="media-grid"></div>
+                </div>
+            </div>
+
+            <!-- Footer with Controls -->
+            <div class="modal-footer">
+                <div class="status-controls">
+                    <select id="status-select">
+                        <option value="pending">Pending</option>
+                        <option value="active">Active</option>
+                        <option value="resolved">Resolved</option>
+                    </select>
+                    <select id="priority-select">
+                        <option value="low">Low Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="high">High Priority</option>
+                        <option value="critical">Critical Priority</option>
+                    </select>
+                </div>
+                <div class="action-buttons">
+                    <button class="update-emergency-btn">
+                        <i class="fas fa-save"></i>
+                        Update Emergency
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add dropdown functionality
+        const profileButton = document.getElementById('profileButton');
+        const profileDropdown = document.getElementById('profileDropdown');
+
+        profileButton.addEventListener('click', () => {
+            profileDropdown.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!profileButton.contains(e.target)) {
+                profileDropdown.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <!-- Add type="module" to enable ES6 modules -->
+    <script type="module" src="public/js/dashboard/index.js"></script>
+    
+    <!-- Include Chart.js before our modules -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Include Leaflet.js for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</body>
+</html>
